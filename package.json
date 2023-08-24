@@ -2,7 +2,10 @@
   "name": "@int/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install",
+    "lint-staged-husky": "lint-staged"
+  },
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^4.33.0",
@@ -16,6 +19,8 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@nx/eslint-plugin": "16.7.3",
     "@nx/js": "16.7.3",
     "@nx/linter": "16.7.3",
@@ -30,6 +35,8 @@
     "@vitest/ui": "~0.32.0",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
     "nx": "16.7.3",
     "nx-cloud": "latest",
     "prettier": "^2.6.2",
@@ -37,5 +44,11 @@
     "vite": "~4.3.9",
     "vite-plugin-dts": "~2.3.0",
     "vitest": "~0.32.0"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "npx eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
   }
 }

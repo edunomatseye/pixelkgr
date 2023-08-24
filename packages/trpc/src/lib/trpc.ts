@@ -11,12 +11,12 @@ const t = initTRPC.context<Context>().create({
   },
 });
 const router = t.router;
-const procedure = t.procedure;
+const publicProcedure = t.procedure;
 const middleware = t.middleware;
 const mergeRouters = t.mergeRouters;
 
 export type { Context };
-export { t, router, procedure, middleware, mergeRouters };
+export { t, router, publicProcedure, middleware, mergeRouters };
 export function trpc(): string {
   return 'trpc';
 }
